@@ -1,5 +1,5 @@
 FROM golang:bullseye AS builder
-ARG XRAY_UI_REPO="https://github.com/jvdi/xray-ui"
+ARG XRAY_UI_REPO="https://github.com/MODSBOTS-GCP/xray-ui"
 RUN git clone ${XRAY_UI_REPO} --depth=1
 WORKDIR /go/xray-ui
 RUN go build -a -ldflags "-linkmode external -extldflags '-static' -s -w"
